@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- Controller -->
+	<context:component-scan base-package="myPage.controller"/>
+	<context:component-scan base-package="admin.controller"/>
+ 	<context:component-scan base-package="main.controller"/>
+ 	<context:component-scan base-package="item.controller"/>
+ 	<context:component-scan base-package="customerService.controller"/>
+ 	<context:component-scan base-package="member.controller"/>
+    <mvc:annotation-driven />
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
+	        <property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<bean id="jsonView"
+		  class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<property name="contentType" value="text/html;charset=UTF-8"/>	
+	</bean>
+	
+	<bean id="beanNameResolver"
+		  class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="0"></property>	
+	</bean>
+	
+	<!-- 파일 업로드 -->
+	<bean id="multipartResolver" 
+		  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		  p:maxUploadSize="5000000"/>
+	
+
+</beans>
