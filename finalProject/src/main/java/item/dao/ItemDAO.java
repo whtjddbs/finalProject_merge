@@ -9,13 +9,13 @@ public interface ItemDAO {
 
 	public List<ItemDTO> getItemList();
 
-	//public List<ItemDTO> getInfoList(String main_codename);
-
 	public List<ItemDTO> getInfoList(Map<String, String> map);
 
 	public int getTotalA(String main_codename);
+	
+	public List<ItemDTO> getCategory();
 
-	//public int getTotalA(main_codename);
+	public List<ItemDTO> getImageList(String main_codename);
 
 }
 

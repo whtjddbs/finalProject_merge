@@ -14,5 +14,5 @@ public class ItemDTO {
 	private String main_codename;
 	private String sub_codename;
 	private String img;
-	private int discount;
+	private double discount;
 }
