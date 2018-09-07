@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <style type="text/css">
 h3.myPage_title {padding-bottom: 10px; border-bottom: 4px solid black; margin: 0px;}
 
@@ -50,7 +50,52 @@ h3.myPage_title {padding-bottom: 10px; border-bottom: 4px solid black; margin: 0
 
 .my_btnbox {margin-top: 80px; text-align: right;}
 .btn_black {min-width: 82px;padding: 0 17px;border: 1px solid #303033;background: #303033;font-size: 13px;color: #fff;line-height: 40px;}
+
+#dialog_frame {
+	background-color: transparent;
+    z-index: 1000;
+    opacity: 1;
+	display: none;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+#dialog {
+	width: inherit;
+    height: inherit;
+    padding: 50px 40px 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.5) 20px 20px 80px 0px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    min-width: 300px;
+}
+#dialog_closeBtn {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}
 </style>
+
+<script>
+$(document).ready(function(){
+	$('#testBtn').click(function(){
+		$('#dialog_frame').show();
+	});
+	$('#dialog_closeBtn').click(function(){
+		$('#dialog_frame').hide();
+	});
+});
+</script>
 
 <section class="trackingDetail">
 	<h3>주문상세내역</h3>
@@ -210,7 +255,14 @@ h3.myPage_title {padding-bottom: 10px; border-bottom: 4px solid black; margin: 0
 	</div>
 	
 	<div class="my_btnbox">
-		<button class="btn_black">주문내역서 출력</button>
+		<button id="testBtn" class="btn_black">주문내역서 출력</button>
 		<button class="btn_black">영수증 출력</button>
+	</div>
+	
+	<div id="dialog_frame">
+		<div id="dialog">
+			<i class="material-icons" id="dialog_closeBtn">clear</i>
+			테스트 중입니다
+		</div>		
 	</div>
 </section>

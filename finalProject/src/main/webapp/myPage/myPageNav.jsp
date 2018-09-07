@@ -8,7 +8,7 @@
 		<div class="wish">
 			<a _myPage href="#">
 				<span _myPage class="heartIcon">♡</span>
-				<span _myPage class="txt">나의 하트</span>
+				<span _myPage class="txt" onclick="location.href='/finalProject/myPage/wishList.do'">나의 하트</span>
 				<em _myPage>0</em>
 			</a>
 		</div>
@@ -18,13 +18,13 @@
 		<ul _myPage>
 			<li _myPage><a _myPage href="/finalProject/myPage/tracking.do">주문배송조회</a></li>
 			<li _myPage><a _myPage href="/finalProject/myPage/modifyList.do">취소/교환/반품 내역</a></li>
-			<li _myPage><a _myPage href="#">상품후기 내역</a></li>
+			<li _myPage><a _myPage href="/finalProject/myPage/myReview.do">상품후기 내역</a></li>
 		</ul>
 		<h4 _myPage>나의 계정설정</h4>
 		<ul _myPage>
 			<li _myPage><a _myPage href="#">회원정보수정</a></li>
 			<li _myPage><a _myPage href="#">회원등급</a></li>
-			<li _myPage><a _myPage href="#">마일리지현황</a></li>
+			<li _myPage><a _myPage href="/finalProject/myPage/myPoint.do">마일리지현황</a></li>
 		</ul>
 		<h4 _myPage>고객센터</h4>
 		<ul _myPage>

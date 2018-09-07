@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<style type="text/css">
-</style>
-
 <section class="tracking">
 	<h3>주문배송조회</h3>
 	<div>
@@ -88,7 +85,6 @@
 									<span>로젠택배</span> <a href="#">96764160415</a>
 								</div>
 							</div>
-							
 						</div>
 					</td>
 				</tr>
